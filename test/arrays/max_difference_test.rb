@@ -1,5 +1,5 @@
 require "minitest/autorun"
-require_relative '../../lib/arrays/max_difference'
+require_relative '../../arrays/max_difference'
 
 class MaxDifferenceTest < Minitest::Test
     

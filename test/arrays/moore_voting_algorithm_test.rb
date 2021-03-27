@@ -1,5 +1,5 @@
 require "minitest/autorun"
-require_relative '../../lib/arrays/moore_voting_algorithm'
+require_relative '../../arrays/moore_voting_algorithm'
 
 class MooreVotingAlgorithmTest < Minitest::Test
     

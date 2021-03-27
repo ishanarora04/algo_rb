@@ -1,5 +1,5 @@
 require "minitest/autorun"
-require_relative '../../lib/arrays/find_a_pair_sum'
+require_relative '../../arrays/find_a_pair_sum'
 
 class FindPairSumTest < Minitest::Test
     

@@ -1,5 +1,5 @@
 require "minitest/autorun"
-require_relative '../../lib/sorting/counting_sort'
+require_relative '../../sorting/counting_sort'
 
 class CountingSortTest < Minitest::Test
     
