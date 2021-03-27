@@ -28,8 +28,9 @@ module Backtrack
                 final_solution.append(sol.dup)
                 return true
             end
-    
-            find_subset_sum_helper(i + 1, k - array[i], sol.append(array[i]) )
+
+            sol.append(array[i])
+            find_subset_sum_helper(i + 1, k - array[i], sol)
             sol.pop
             find_subset_sum_helper(i + 1, k, sol)
 
