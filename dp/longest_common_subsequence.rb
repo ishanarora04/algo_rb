@@ -15,7 +15,7 @@ module DP
             dp = Array.new(n + 1) {Array.new(m + 1, 0)}
             for i in 1..n do
                 for j in 1..m do
-                    if str1[i] == str2[j] 
+                    if str1[i-1] == str2[j-1] 
                         dp[i][j] = 1 + dp[i-1][j-1]
                     else
                         dp[i][j] = [dp[i-1][j], dp[i][j-1]].max
