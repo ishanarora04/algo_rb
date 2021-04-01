@@ -45,12 +45,14 @@ module DivideAndConquer
                         return search_helper(mid + 1, high, num)
                     end
                 end
+            elsif low == high
+                return low
             end
                 
             -1
         end
 
-        def binary_search(low, high, num)
+        def binary_search(low, high, num, array)
             if low < high
                 mid =  (low + high)/2
                 if array[mid] == num
@@ -62,6 +64,8 @@ module DivideAndConquer
                 else 
                     -1
                 end
+            elsif low == high
+                return low
             end
             -1    
         end
@@ -70,4 +74,4 @@ module DivideAndConquer
 end
 
 
-puts DivideAndConquer::RotatedSortedArray.new(array: [1]).search(0)
+puts DivideAndConquer::RotatedSortedArray.new(array: [4,5,6,7,0,1,2]).search(0)
