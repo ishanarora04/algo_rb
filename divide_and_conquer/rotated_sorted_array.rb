@@ -3,9 +3,6 @@
 # eg: 1 2 3 4 5 6 7 8 9 10 became
 # 7, 8, 9, 10, 1, 2, 3, 4, 5, 6
 # and we need to search for some element in this array.
-
-#require 'byebug'
-
 module DivideAndConquer
     class RotatedSortedArray
     
@@ -21,15 +18,13 @@ module DivideAndConquer
         
         def search_helper(low, high, num)
 
-            #debugger
-
             if low < high
                 mid = (low + high)/2
                 if array[mid] == num
                     return mid
                 end
                 
-                if array[mid+1] < array[high]
+                if array[mid+1] <= array[high]
                     if  num >= array[mid + 1] and num <= array[high]
                         return binary_search(mid + 1, high, num)
                     else
@@ -38,7 +33,7 @@ module DivideAndConquer
                 end
 
 
-                if array[low] < array[mid - 1] 
+                if array[low] <= array[mid - 1] 
                     if num >= array[low] and num <= array[mid-1]
                         return binary_search(low, mid - 1, num)
                     else
@@ -53,19 +48,15 @@ module DivideAndConquer
         end
 
         def binary_search(low, high, num)
-            if low < high
+            if low <= high
                 mid =  (low + high)/2
                 if array[mid] == num
                     return mid
-                elsif num >= array[low] and num <= array[mid-1]
+                elsif num < array[mid]
                     return binary_search(low, mid - 1, num)
-                elsif num >= array[mid+1] and num <= array[high]
+                else
                     return binary_search(mid + 1, high, num)
-                else 
-                    -1
                 end
-            elsif low == high
-                return low
             end
             -1    
         end
@@ -74,4 +65,5 @@ module DivideAndConquer
 end
 
 
-puts DivideAndConquer::RotatedSortedArray.new(array: [4,5,6,7,0,1,2]).search(0)
+#puts DivideAndConquer::RotatedSortedArray.new(array: [3,4,5,6,7,8,1,2]
+    ).search(2)
