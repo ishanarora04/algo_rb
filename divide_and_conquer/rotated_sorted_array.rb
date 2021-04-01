@@ -52,7 +52,7 @@ module DivideAndConquer
             -1
         end
 
-        def binary_search(low, high, num, array)
+        def binary_search(low, high, num)
             if low < high
                 mid =  (low + high)/2
                 if array[mid] == num
